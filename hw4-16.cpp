@@ -1,36 +1,35 @@
 // Advanced16.cpp
-// Created/revised by <your name> on <current date>
+// Created/revised by <Elijah Flanagan> on <09/19/24>
 
 #include <iostream>
-#include <iomanip>  // for setprecision
+#include <iomanip>
 using namespace std;
 
-int main()
-{
-    // Declare the necessary variables for store sales and total
-    double store1, store2, increase;
-    int store1Int, store2Int, totalInt;
-
-    // Input: Get the sales for Store 1, Store 2, and the increase percentage
-    cout << "Enter sales for Store 1: ";
+int main() {
+    // Declare constant and variables
+    const double increase = 1.05;  // 5% increase
+    double store1 = 0.0, store2 = 0.0;
+    int store1Int = 0, store2Int = 0, totalInt = 0;  // Declare integer variables for monetary calculations
+    
+    // Input store sales
+    cout << "Store 1 sales: ";
     cin >> store1;
     
-    cout << "Enter sales for Store 2: ";
+    cout << "Store 2 sales: ";
     cin >> store2;
-
-    cout << "Enter the percentage increase (as a decimal): ";
-    cin >> increase;
-
-    // Process: Convert to integer (cents) and apply the increase
-    store1Int = static_cast<int>(store1 * increase * 100 + 0.5);  // Rounding to nearest cent
-    store2Int = static_cast<int>(store2 * increase * 100 + 0.5);  // Rounding to nearest cent
-    totalInt = store1Int + store2Int;  // Total sales in cents
-
-    // Output: Display the updated sales in dollars with two decimal places
-    cout << fixed << setprecision(2);  // Set output format to 2 decimal places
-    cout << "Store 1 updated sales: $" << store1Int / 100.0 << endl;
-    cout << "Store 2 updated sales: $" << store2Int / 100.0 << endl;
-    cout << "Total updated sales: $" << totalInt / 100.0 << endl;
+    
+    // Convert sales to integer cents and apply the increase
+    store1Int = static_cast<int>(store1 * increase * 100 + 0.5);  // Store sales in cents
+    store2Int = static_cast<int>(store2 * increase * 100 + 0.5);  // Store sales in cents
+    totalInt = store1Int + store2Int;  // Calculate the total in cents
+    
+    // Output results in dollars with two decimal places
+    cout << fixed << setprecision(2);
+    cout << store1Int / 100.0 << " ---> Store 1" << endl;
+    cout << store2Int / 100.0 << " ---> Store 2" << endl;
+    cout << "-----------------" << endl;
+    cout << totalInt / 100.0 << " ---> Total" << endl;
 
     return 0;
 }  // end of main function
+

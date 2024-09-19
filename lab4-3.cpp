@@ -1,24 +1,25 @@
-//Lab4-3.cpp - displays a salesperson's commission
-//Created/revised by <your name> on <current date>
-
 #include <iostream>
+#include <iomanip>  // For setting output precision
 using namespace std;
 
-int main()
-{
-  //declare named constant and variables
-  const double COMM_RATE = 0.1;
-  double sales = 0.0;
-  double commission = 0.0;
+int main() {
+    // Declare variables
+    double salesAmount = 0.0;
+    double commission = 0.0;
+    const double COMMISSION_RATE = 0.10;  // Commission rate of 10%
 
-  //enter input item
-  cout << "Sales amount: ";
-  cin >> sales;
+    // Input: Get the sales amount from the user
+    cout << "Enter the sales amount: ";
+    cin >> salesAmount;
 
-  //calculate and display the commision
-  commission = sales * COMM_RATE;
-  cout << "Commission: $" << commission << endl;
+    // Process: Calculate the commission
+    commission = salesAmount * COMMISSION_RATE;
 
-  return 0;
+    // Output: Display the commission
+    cout << fixed << setprecision(2);  // Set output to display two decimal places
+    cout << "Commission: $" << commission << endl;
 
-} //end of main function
+    return 0;
+}  // end of main function
+
+
