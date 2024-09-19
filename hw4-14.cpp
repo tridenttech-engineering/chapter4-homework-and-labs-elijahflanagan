@@ -37,4 +37,9 @@ int main() {
     cout << fixed << setprecision(1);
     cout << "Total pizzas sold: " << totalPizzas << endl;
     cout << "Percentage of small pizzas: " << smallPercent << "%" << endl;
-    cout << "Percentage o
+    cout << "Percentage of medium pizzas: " << mediumPercent << "%" << endl;
+    cout << "Percentage of large pizzas: " << largePercent << "%" << endl;
+    cout << "Percentage of family pizzas: " << familyPercent << "%" << endl;
+
+    return 0;
+}
